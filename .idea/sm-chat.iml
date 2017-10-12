@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$" />
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library name="PHP" type="php">
+        <CLASSES>
+          <root url="file:///opt/local/lib/php" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file:///opt/local/lib/php" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="PHARS">
+        <CLASSES>
+          <root url="phar:///opt/local/lib/php/pear/install-pear-nozlib.phar/" />
+        </CLASSES>
+        <SOURCES>
+          <root url="phar:///opt/local/lib/php/pear/install-pear-nozlib.phar/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+  </component>
+</module>

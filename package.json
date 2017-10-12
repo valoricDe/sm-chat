@@ -1,0 +1,22 @@
+{
+  "name": "sm-chat",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-relay": "^1.4.1",
+    "react-scripts": "1.0.14",
+    "relay-runtime": "^1.4.1"
+  },
+  "scripts": {
+    "build": "node ./setup && react-scripts build",
+    "start": "node ./setup && react-scripts start",
+    "test": "node ./setup && react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "babel-plugin-relay": "^1.4.1",
+    "relay-compiler": "^1.4.1"
+  }
+}
