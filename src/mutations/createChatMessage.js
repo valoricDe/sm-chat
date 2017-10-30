@@ -10,16 +10,16 @@ const mutation = graphql`
                 message
                 updated
             }
-            chatMessageEdge {
-                node {
-                    id
+            query {
+                allChatMessages {
+                    totalCount
                 }
             }
         }
     }
 `;
 
-function mutateChatMessage(environment, username, message) {
+function mutateChatMessage(environment, data, username, message) {
   const variables = {
     input: {
       chatMessage: {
@@ -30,17 +30,36 @@ function mutateChatMessage(environment, username, message) {
   };
 
   const optimisticResponse = {
-    createChatMessage: variables.input,
+    createChatMessage: {
+      chatMessage: variables.input.chatMessage,
+      query: {
+        allChatMessages: {
+          totalCount: data.allChatMessages.totalCount + 1
+        }
+      },
+    }
   };
 
-  const updater = mutationCreateUpdater('createChatMessage', 'chatMessage', 'AppQuery_allChatMessages');
+  /*const configs = [{
+    type: 'RANGE_ADD',
+    parentID: 'client:root',
+    connectionInfo: [{
+      key: 'AppQuery_allChatMessages',
+      rangeBehavior: 'append',
+    }],
+    edgeName: 'chatMessageEdge',
+  }];*/
+
+  const updater = mutationCreateUpdater(
+    'createChatMessage', 'chatMessage', 'AppQuery_allChatMessages', ['query', 'allChatMessages']);
 
   commitMutation(
     environment,
     {
       mutation,
       variables,
-      updater,
+      //configs,
+      updater: updater,
       optimisticResponse,
       optimisticUpdater: updater,
       onCompleted: (response, errors) => {

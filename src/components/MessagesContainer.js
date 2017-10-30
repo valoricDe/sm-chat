@@ -12,21 +12,21 @@ import styles from '../styles/MessagesContainer.css';
 class MessagesContainer extends React.Component {
   keyPress = (e) => {
     if(e.keyCode === 13 && e.target.value.trim().length > 0){
-      const {relay, simpleState: state} = this.props;
-      createChatMessage(relay.environment, state.activeUser, e.target.value);
+      const {relay, data, simpleState: state} = this.props;
+      createChatMessage(relay.environment, data, state.activeUser, e.target.value);
       chooseNewUser();
       e.target.value = '';
     }
   };
 
   updateMessage = (id, text) => {
-    const {relay, simpleState: state} = this.props;
+    const {relay} = this.props;
     updateChatMessage(relay.environment, id, text);
   };
 
   deleteMessage = (id) => {
-    const {relay, simpleState: state} = this.props;
-    deleteChatMessage(relay.environment, this.props.parentId, id);
+    const {relay, data} = this.props;
+    deleteChatMessage(relay.environment, data, id);
   };
 
   render() {

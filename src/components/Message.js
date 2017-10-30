@@ -44,8 +44,8 @@ class Message extends React.Component {
             {!this.state.editMode ? <span>{message}</span> :
               <input defaultValue={message} autoFocus className={styles.messageInputField} onKeyDown={this.keyPress} />
             }
-            <MdCreate onClick={() => this.toggleEditMode()} title="Edit"/>
-            <MdClose onClick={() => deleteMessage(id)} title="Delete"/>
+            <MdCreate onClick={() => this.toggleEditMode()} title="Edit" style={{cursor: 'pointer'}}/>
+            <MdClose onClick={() => deleteMessage(id)} title="Delete" style={{cursor: 'pointer'}}/>
           </div>
           <small className={styles.messageDate}>{updated ? new Date(updated).toLocaleString() : <Spinner style={{width: '12px', height: '12px', margin: '2px'}} />}</small>
         </div>
