@@ -1,0 +1,2 @@
+docker-compose up -d && \
+postgraphile -c http://admin:1234@localhost:5432/admin -s public -a -j -w -o

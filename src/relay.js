@@ -2,14 +2,14 @@ import { Environment, Network, RecordSource, Store } from 'relay-runtime';
 
 function fetchQuery(operation, variables) {
   return fetch(
-    process.env.REACT_APP_API || 'http://localhost:8080',
+    process.env.REACT_APP_API || 'http://localhost:5000/graphql',
     {
       method: 'POST',
       headers: {
         // Add authentication and other headers here
         'content-type': 'application/json',
       },
-      credentials: 'include',
+      //credentials: 'include',
       body: JSON.stringify({
         query: operation.text, // GraphQL text from input
         variables,

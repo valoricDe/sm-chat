@@ -9,5 +9,5 @@ services:
   ports:
    - "5432:5432"
   volumes:
-   - ./../politbase-data:/var/lib/postgresql/data
+   - ./db-data:/var/lib/postgresql/data
    - ./sql:/tmp

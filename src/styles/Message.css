@@ -1,0 +1,72 @@
+.messageRow {
+  display: flex;
+  margin-top: 5px;
+  align-items: stretch;
+}
+
+.avatarContainer {
+  position: relative;
+}
+
+.avatarContainer img {
+  border-radius: 15px;
+}
+
+.avatarContainer p {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 30px;
+  width: 30px;
+  text-align: center;
+  text-shadow: 1px 0px 0px white, 0px 1px 0px white;
+}
+
+.triangle {
+  margin-top: 10px;
+  margin-left: 5px;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-right: 5px solid #f1f1f1;
+}
+
+.messageContainer {
+  flex-grow: 1;
+  text-align: right;
+}
+
+.message {
+  margin-top: 2px;
+  margin-bottom: 0;
+  padding: 0 5px;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  background-color: #f1f1f1;
+  display: flex;
+  align-items: center;
+}
+
+.message span, .message input {
+  flex-grow: 1;
+  margin-right: 5px;
+}
+
+.message input {
+  text-align: right;
+}
+
+.messageDate {
+  margin: 0;
+  padding: 0;
+}
+
+.messageEditField {
+  width: 100%;
+  padding: 1px;
+  margin: 1px;
+  border-radius: 3px;
+}

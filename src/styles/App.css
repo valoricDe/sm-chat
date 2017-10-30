@@ -1,5 +1,6 @@
-.App {
-  text-align: center;
+.AppRow {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .App-logo {
@@ -26,3 +27,5 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+

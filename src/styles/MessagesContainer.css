@@ -1,0 +1,21 @@
+.messagesContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.messageContainerHeader {
+
+}
+
+.messageListContainer {
+  flex-grow: 1;
+  overflow-y: auto;
+  margin: 8px 0;
+  padding: 0 8px;
+  border-bottom: 1px solid #dddddd;
+}
+
+.messageInputField {
+
+}
