@@ -17,6 +17,10 @@
   box-sizing: border-box;
 }
 
+.Box h2 {
+  margin: 0 auto 0.5rem;
+}
+
 .BoxContent {
   position: relative;
   flex-grow: 1;
