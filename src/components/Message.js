@@ -22,9 +22,6 @@ class Message extends React.Component {
       this.props.updateMessage(this.props.data.id, e.target.value);
       this.toggleEditMode();
     }
-    //else {
-    //  this.setState({inputValue: e.target.value});
-    //}
   };
 
   render() {
