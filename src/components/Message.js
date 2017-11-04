@@ -12,13 +12,17 @@ class Message extends React.Component {
     editMode: false,
   };
 
+  inputField;
+
   toggleEditMode = () => {
+    if(this.state.editMode) {
+      this.props.updateMessage(this.props.data.id, this.inputField.value);
+    }
     this.setState({editMode: !this.state.editMode});
   };
 
   keyPress = (e) => {
     if(e.keyCode === 13 && e.target.value.trim().length > 0) {
-      debugger;
       this.props.updateMessage(this.props.data.id, e.target.value);
       this.toggleEditMode();
     }
@@ -39,7 +43,7 @@ class Message extends React.Component {
         <div className={styles.messageContainer}>
           <div className={styles.message}>
             {!this.state.editMode ? <span>{message}</span> :
-              <input defaultValue={message} autoFocus className={styles.messageInputField} onKeyDown={this.keyPress} />
+              <input ref={ref => { this.inputField = ref}} defaultValue={message} autoFocus className={styles.messageInputField} onKeyDown={this.keyPress} />
             }
             <MdCreate onClick={() => this.toggleEditMode()} title="Edit" style={{cursor: 'pointer'}}/>
             <MdClose onClick={() => deleteMessage(id)} title="Delete" style={{cursor: 'pointer'}}/>

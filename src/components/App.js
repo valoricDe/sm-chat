@@ -10,8 +10,6 @@ import * as schizophrenicIdenties from "../assets/identities";
 import styles from "../styles/App.css";
 
 const simpleState = {activeUser: ''};
-let AppClass;
-
 
 export const chooseNewUser = () => {
   const key = Math.floor(Math.random() * schizophrenicIdenties.length);
@@ -50,9 +48,6 @@ class App extends React.Component {
         );
 
   render() {
-    AppClass = this;
-    console.log(this.props, this.state.variables);
-
     return (
       <div className={styles.App}>
           <QueryRenderer
