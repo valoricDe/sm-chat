@@ -2,15 +2,17 @@
 
 This project runs with a dockerised postgres database, PostGraphQL and node.
 
-Please run:
+Please run the following commands in Terminal 1:
 ```
 npm install
-npm run relay
+./postgraphileStart
 ```
 
-Then in Terminal 1: `./postgraphileStart`
-
-And in Terminal 2: `npm run start`
+And after that in Terminal 2:
+```
+npm run relay
+npm run start
+```
 
 You should be then able to access the chat when opening `localhost:3000` in your browser.
 
