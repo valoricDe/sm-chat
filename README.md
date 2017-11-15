@@ -4,17 +4,30 @@ This project runs with a dockerised postgres database, PostGraphQL and node.
 
 Please run the following commands in Terminal 1:
 ```
+npm install -g postgraphile
 npm install
+
+```
+
+After that copy the provided db-data.zip into the project root folder and unzip it.
+Then you can start the docker postgres database in a terminal with:
+```
+docker-compose up
+```
+Info: It could be needed that you stop and restart the 
+
+In another terminal you can then start the PostGraqlQL-Server with:
+```
 ./postgraphileStart
 ```
 
-And after that in Terminal 2:
+To generate the graphql queries and start the app you enter:
 ```
 npm run relay
 npm run start
 ```
 
-You should be then able to access the chat when opening `localhost:3000` in your browser.
+You should be then able to access the chat when opening <http://localhost:3000> in your browser.
 
 
 ############################################################
